@@ -1,0 +1,21 @@
+<div *ngIf="form">
+    <form [formGroup]="form">
+  
+      <div *ngFor="let liability of liabilities" >
+          <div [formGroupName]="liability.liabilityName">
+            <label>{{liability.liabilityName}}</label>
+            <mat-radio-group aria-label="Select an option"
+                            formControlName="rb">
+            <mat-radio-button value="1">Option 1</mat-radio-button>
+            <mat-radio-button value="2">Option 2</mat-radio-button>
+            </mat-radio-group>
+            <!-- <div class="errorMessage" *ngIf="!isValid">{{question.label}} is required</div> -->
+          </div>
+      </div>
+           
+  
+      <div class="form-row">
+        <button type="button" (click) ="onSubmit()">Save</button>
+      </div>
+    </form>
+</div>
